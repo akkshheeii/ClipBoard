@@ -62,8 +62,8 @@ Copy the Stored data to use again.
 ---
 
 ```
-> Recent Activity
-Displays latest uploaded files.
+> Stared Copy
+Star the Data to keep it priority
 ```
 
 <img src = "ScreenShots/starcopy.png">
