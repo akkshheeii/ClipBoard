@@ -35,7 +35,7 @@ clear after use
 > Fresh  Clipboard
 Simple Interface to visit your copies.
 ```
-<img src = "ScreenShots - Of No Use/Nothing.png">
+<img src = "ScreenShots/Nothing.png">
 
 ---
  
@@ -45,7 +45,7 @@ The copies and store in Descending Order So
 you can deal with the latest one first
 ```
 
-<img src = "ScreenShots - Of No Use/NewCopies.png">
+<img src = "ScreenShots/NewCopies.png">
 
 ---
 
@@ -54,7 +54,7 @@ you can deal with the latest one first
 Copy the Stored data to use again.
 ```
 
-<img src = "ScreenShots - Of No Use/ReCopy.png">
+<img src = "ScreenShots/ReCopy.png">
 
 ---
 
@@ -63,7 +63,7 @@ Copy the Stored data to use again.
 Displays latest uploaded files.
 ```
 
-<img src = "ScreenShots - Of No Use/starcopy.png">
+<img src = "ScreenShots/starcopy.png">
 
 
 ---
