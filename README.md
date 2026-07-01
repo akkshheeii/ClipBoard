@@ -14,6 +14,9 @@ a single copy access - ClipBoard helps you to store upto 100 last Copies in
 a database ( So it doesnt randomly disappear ) Which you can Access anytime.
 Star your important once so they stay on the top - delete the useless and
 clear after use
+
+
+This is Locally Executed Project Not meant to be used as Pubic
 ```
 
 <div align="center">
@@ -103,7 +106,6 @@ python main.py
 ```
 id
 content
-password
 timestamp
 starred
 ```
