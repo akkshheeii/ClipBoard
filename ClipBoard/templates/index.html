@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Press+Start+2P&family=Tilt+Warp&display=swap" rel="stylesheet">
+<title>Clipboard</title>
+
+
+</head>
+
+<body>
+
+<div class="container">
+
+    
+<!-- Top Controls -->
+    <div class="controls">
+
+        <form action = "{{url_for('clear')}}" method = "POST">
+        <button
+            id="clear"
+            class="toggle"
+            onclick="toggleStarred()">
+            Clear ClipBoard
+        </button>
+        </form>
+    </div>
+
+
+{% for clip in clips %}
+
+<div class="clip" id = "{{clip.id}}" >
+
+    <div class="left">
+
+        <div class="content" onclick="copyText(`{{ clip.content|escape }}`,'{{clip.id}}')">
+            {{ clip.content }}
+        </div>
+
+        <div class="time">
+            {{ clip.timestamp }}
+        </div>
+
+    </div>
+
+    <div class="right">
+
+        <button
+            class="copy"
+            onclick="copyText(`{{ clip.content|escape }}`,'{{clip.id}}')">
+            📋
+        </button>
+<form action = "{{url_for('star', id=clip.id)}}" method = "POST">
+        <button class="star">
+            {% if clip.starred %}
+                ⭐
+            {% else %}
+                ☆
+            {% endif %}
+        </button>
+        </form>
+
+        <form action="{{ url_for('delete', id=clip.id) }}" method="POST" style="display:inline;">
+            <button type="submit" class="delete">
+                🗑
+            </button>
+        </form>
+
+    </div>
+
+</div>
+
+{% endfor %}
+<div class="noclips" style ="display: none;">
+Nothing in the clipboard !
+</div>
+</div>
+
+<script>
+    num =parseInt('{{clips|length}}')
+    if (num == 0){
+        console.log("No Clips Found")
+        const temp = document.getElementsByClassName("noclips")[0]
+        temp.style.display = "block"
+        const toggle = document.getElementsByClassName("controls")[0]
+        toggle.style.display="none"
+    }
+function copyText(text,id){
+    a = parseInt(id)
+    const doc = document.getElementById(a)
+    doc.style.backgroundColor = "lightgreen";
+    setInterval(function () {
+        doc.style.backgroundColor='white';
+    console.log("Running...");
+    }, 300);
+    
+
+    navigator.clipboard.writeText(text);
+
+}
+
+setTimeout(() => {
+    location.reload();
+}, 1000);
+</script>
+
+</body>
+</html>
